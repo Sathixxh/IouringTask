@@ -39,7 +39,7 @@ class SearchScreen extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          "No Data",
+          "data Not Found",
           style: Theme.of(context)
               .textTheme
               .bodyMedium!

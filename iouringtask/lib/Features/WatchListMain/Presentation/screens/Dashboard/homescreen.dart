@@ -12,7 +12,13 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   static List<Widget> Screens = <Widget>[
     WatchlistScreen(),
-    const Center(child: Text('Orders Screen')),
+     Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(Icons.list),
+        Text('Orders Screen'),
+      ],
+         ),
     const Center(child: Text('Portfolio Screen')),
     const Center(child: Text('Movers Screen')),
     const Center(child: Text('More Screen')),

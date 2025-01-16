@@ -1,8 +1,6 @@
-import 'dart:math';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:iouringtask/Features/WatchListMain/Presentation/bloc/bloc_cubit.dart';
 import 'package:iouringtask/Features/WatchListMain/Presentation/bloc/bloc_screen.dart';
 import 'package:iouringtask/Features/WatchListMain/Presentation/bloc/bloc_state.dart';
@@ -10,7 +8,6 @@ import 'package:iouringtask/Features/WatchListMain/Presentation/commonwidgets/te
 import 'package:iouringtask/Features/WatchListMain/Presentation/screens/bottomNaavigation.dart/searchpage.dart';
 
 import 'package:iouringtask/core/Themes/stylecolors.dart';
-
 
 class WatchlistScreen extends StatefulWidget {
   @override
@@ -107,7 +104,7 @@ class _WatchlistScreenState extends State<WatchlistScreen>
                           children: [
                             Icon(
                               size: 18,
-                              Icons.grid_view_sharp,
+                              Icons.apps_rounded,
                               color: ColorPallete.dark_secondaryColor,
                             ),
                             SizedBox(
@@ -115,7 +112,7 @@ class _WatchlistScreenState extends State<WatchlistScreen>
                             ),
                             Icon(
                               size: 18,
-                              Icons.settings_input_composite_rounded,
+                              Icons.settings_input_component_outlined,
                               color: ColorPallete.dark_secondaryColor,
                             ),
                             SizedBox(
@@ -133,42 +130,66 @@ class _WatchlistScreenState extends State<WatchlistScreen>
                         } else if (state is WatchListSuccessState) {
                           return ListView(
                             children: [
-                              ...state.watchListDetails.map((item) =>
-ListTile(
-      onTap: () {},
-      title: Text(item.symbol),
-      subtitle: Text(item.exchange),
-      trailing: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width *0.2
-,            child: Row(
-              children: [
-                Icon(Icons.arrow_drop_up_sharp,color: ColorPallete.dark_secondaryColor,),
-                Text(
-                  item.price.toString(),
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodySmall!
-                      .copyWith(color: ColorPallete.dark_secondaryColor),
-                ),
-              ],
-            ),
-          ),
-          Text(
-            "+${item.change} (${item.percentageChange}%)",
-            style: const TextStyle(color: ColorPallete.light_textcolor),
-          ),
-        ],
-      ),
-    ),
+                              ...state.watchListDetails.map(
+                                (item) => ListTile(
+                                  onTap: () {},
+                                  title: Text(item.symbol),
+                                  subtitle: Row(
+                                    children: [
+                                      Text(item.exchange),
+                                      Spacer(),
+                                      Visibility(
+                                          visible: item.navValue != 0,
+                                          child: Icon(
+                                            Icons.badge,
+                                            size: 15,
+                                          )),
+                                      Visibility(
+                                          visible: item.navValue != 0,
+                                          child:
+                                              Text(item.navValue.toString())),
+                                      Spacer(
+                                        flex: 9,
+                                      )
+                                    ],
+                                  ),
+                                  trailing: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.2,
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                              Icons.arrow_drop_up_sharp,
+                                              color: ColorPallete
+                                                  .dark_secondaryColor,
+                                            ),
+                                            Text(
+                                              item.price.toString(),
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .bodySmall!
+                                                  .copyWith(
+                                                      color: ColorPallete
+                                                          .dark_secondaryColor),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Text(
+                                        "+${item.change} (${item.percentageChange}%)",
+                                        style: const TextStyle(
+                                            color:
+                                                ColorPallete.light_textcolor),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ),
-
-
-
-                                 
-                               SizedBox(
+                              SizedBox(
                                 height: 30,
                               ),
                               Center(
@@ -223,12 +244,107 @@ ListTile(
                   const SizedBox()
                 ],
               ),
-              const Center(
-                child: Text("No data"),
-              ),
-              const Center(
-                child: Text("No data"),
-              )
+               Column(
+  children: [
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: CustomTextformfield(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SearchScreen(),
+            ),
+          );
+        },
+        hintText: 'Search & Add',
+        prefixIcon: const Icon(Icons.search),
+        suffixIcon: const Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Icon(
+              size: 18,
+              Icons.apps_rounded,
+              color: ColorPallete.dark_secondaryColor,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Icon(
+              size: 18,
+              Icons.settings_input_component_outlined,
+              color: ColorPallete.dark_secondaryColor,
+            ),
+            SizedBox(
+              width: 15,
+            )
+          ],
+        ),
+      ),
+    ),
+    Expanded(
+      child: Center(
+        child: Text(
+          "No Data",
+          style: TextStyle(fontSize: 16, color: Colors.grey),
+        ),
+      ),
+    ),
+  ],
+),
+             Column(
+  children: [
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: CustomTextformfield(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SearchScreen(),
+            ),
+          );
+        },
+        hintText: 'Search & Add',
+        prefixIcon: const Icon(Icons.search),
+        suffixIcon: const Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Icon(
+              size: 18,
+              Icons.apps_rounded,
+              color: ColorPallete.dark_secondaryColor,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Icon(
+              size: 18,
+              Icons.settings_input_component_outlined,
+              color: ColorPallete.dark_secondaryColor,
+            ),
+            SizedBox(
+              width: 15,
+            )
+          ],
+        ),
+      ),
+    ),
+    Expanded(
+      child: Center(
+        child: Text(
+          "No Data",
+          style: TextStyle(fontSize: 16, color: Colors.grey),
+        ),
+      ),
+    ),
+  ],
+)
+
             ],
           ),
         );
