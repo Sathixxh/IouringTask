@@ -17,7 +17,7 @@ class CustomTextformfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-          hintText: hintText, prefixIcon: prefixIcon, suffixIcon: suffixIcon),
+                  hintText: hintText, prefixIcon: prefixIcon, suffixIcon: suffixIcon),
       onTap: onTap,
     );
   }
