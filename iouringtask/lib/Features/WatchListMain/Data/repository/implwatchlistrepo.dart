@@ -3,10 +3,10 @@ import 'package:iouringtask/Features/WatchListMain/Data/datasource/datasource.da
 import 'package:iouringtask/Features/WatchListMain/Data/model/watchlistmodel.dart';
 import 'package:iouringtask/Features/WatchListMain/Domain/Repository/watchlistRepo.dart';
 
-class WatchListRepImpl implements WatchListrep {
+class WatchListRepImpl implements WatchListrepos {
   final WatchListDatasource watchListDatasource;
   WatchListRepImpl({required this.watchListDatasource});
   @override
-  Future<List<WatchListModel>> watchListRep() async =>
+  Future<List<WatchListModel>> watchListdataRepos() async =>
       await watchListDatasource.fetchdata();
 }

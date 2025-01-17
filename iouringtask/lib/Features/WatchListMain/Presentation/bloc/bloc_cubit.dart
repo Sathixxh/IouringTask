@@ -6,27 +6,32 @@ import 'package:iouringtask/Features/WatchListMain/Presentation/bloc/bloc_state.
 
 class WatchListBloc extends Bloc<WatchlistEvent, WatchListState> {
   final WatchListUseCase watchListUseCase;
-  WatchListBloc({required this.watchListUseCase})
-      : super(WatchListLoadingState()) {
+
+  WatchListBloc({required this.watchListUseCase}) : super(WatchListLoadingState()) {
+    // Handle LoadWatchlist event
     on<LoadWatchlist>(
       (event, emit) async {
         emit(WatchListLoadingState());
         try {
-          print("etered");
           final watchListDetails = await watchListUseCase.getdata();
-          print(watchListDetails);
           emit(WatchListSuccessState(watchListDetails: watchListDetails));
         } catch (e) {
-          print(e.toString());
-          emit(const WatchListFailureState(message: "ApiFailed"));
+          emit(const WatchListFailureState(message: "Error "));
         }
       },
     );
+
+    // Handle UpdateWatchListEvent (after reordering)
+    on<UpdateWatchListEvent>(
+      (event, emit) {
+        emit(WatchListSuccessState(watchListDetails: event.updatedWatchList));
+      },
+    );
   }
+
   @override
   void onChange(Change<WatchListState> change) {
-    // TODO: implement onChange
     super.onChange(change);
-    print(change.currentState.toString());
+    // print("Watchlist::${change.currentState.toString()}");
   }
 }

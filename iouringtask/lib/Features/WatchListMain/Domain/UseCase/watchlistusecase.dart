@@ -4,9 +4,9 @@ import 'package:iouringtask/Features/WatchListMain/Data/model/watchlistmodel.dar
 import 'package:iouringtask/Features/WatchListMain/Domain/Repository/watchlistRepo.dart';
 
 class WatchListUseCase {
-  final WatchListrep watchlistrep;
+  final WatchListrepos watchlistrep;
 
   WatchListUseCase({required this.watchlistrep});
   Future<List<WatchListModel>> getdata() async =>
-      await watchlistrep.watchListRep();
+      await watchlistrep.watchListdataRepos();
 }

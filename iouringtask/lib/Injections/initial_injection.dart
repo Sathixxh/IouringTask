@@ -14,7 +14,7 @@ class ServiceLocator {
     serviceLocator.registerLazySingleton<WatchListDatasource>(
       () => WatchListDataSourceimpl(),
     );
-    serviceLocator.registerLazySingleton<WatchListrep>(
+    serviceLocator.registerLazySingleton<WatchListrepos>(
       () => WatchListRepImpl(watchListDatasource: serviceLocator.call()),
     );
     serviceLocator.registerLazySingleton<WatchListUseCase>(

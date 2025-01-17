@@ -12,16 +12,47 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   static List<Widget> Screens = <Widget>[
     WatchlistScreen(),
-     Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(Icons.list),
-        Text('Orders Screen'),
-      ],
-         ),
-    const Center(child: Text('Portfolio Screen')),
-    const Center(child: Text('Movers Screen')),
-    const Center(child: Text('More Screen')),
+     Center(
+       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+
+        children: [
+          Icon(Icons.shopping_bag),
+          Text('Orders Screen'),
+        ],
+           ),
+     ),
+      Center(
+       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+
+        children: [
+          Icon(Icons.pie_chart),
+          Text('Portfolio Screen'),
+        ],
+           ),
+     ),
+      Center(
+       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+
+        children: [
+          Icon(Icons.trending_up),
+          Text('Movers Screen'),
+        ],
+           ),
+     ),
+      Center(
+       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+
+        children: [
+          Icon(Icons.more_horiz),
+          Text('More Screen'),
+        ],
+           ),
+     ),
+   
   ];
 
   @override
@@ -54,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
         onTap: (value) {
-          context.read<BottomNavigationCubit>().changeIndex(index: value);
+          context.read<BottomNavigationCubit>().changeingIndex(index: value);
         },
       ),
     );

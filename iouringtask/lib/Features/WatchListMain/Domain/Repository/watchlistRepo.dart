@@ -1,5 +1,5 @@
 import 'package:iouringtask/Features/WatchListMain/Data/model/watchlistmodel.dart';
 
-abstract interface class WatchListrep {
-  Future<List<WatchListModel>> watchListRep();
+abstract interface class WatchListrepos {
+  Future<List<WatchListModel>> watchListdataRepos();
 }

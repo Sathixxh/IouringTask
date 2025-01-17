@@ -5,6 +5,7 @@ class ColorPallete {
   static const Color dark_Secondary_bgColor = Color.fromARGB(255, 34, 34, 34);
 
   static const Color dark_secondaryColor = Colors.green;
+  static const Color dark_sellColor = Colors.red;
   static const Color dark_textcolor = Colors.white;
   static const Color light_backgroundColor = Colors.white;
   static const Color light_secondaryColor = Colors.green;

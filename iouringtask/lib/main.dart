@@ -7,9 +7,11 @@ import 'package:iouringtask/Injections/initial_injection.dart';
 import 'package:iouringtask/core/Themes/apptheme.dart';
 
 void main() async {
-  await ServiceLocator.init();
+  await ServiceLocator.init();//dependency injection
 
-  runApp(MultiBlocProvider(providers: [
+  runApp(
+    
+    MultiBlocProvider(providers: [
     BlocProvider<WatchListBloc>(
         create: (_) => ServiceLocator.serviceLocator<WatchListBloc>()),
     BlocProvider<BottomNavigationCubit>(
@@ -24,9 +26,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Watchlist',
+      title: 'Iouring',
       theme: AppTheme.Darkmode(context),
-      home: HomeScreen(),
+      home: HomeScreen(),//initial screen
     );
   }
 }
