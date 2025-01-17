@@ -32,7 +32,7 @@ class StockDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildStockDetail(String label, String value, {Color color = ColorPallete.dark_textcolor}) {
+  Widget _buildStockDetail(String label, String value, {Color color = ColorsPallete.darkmodetextcolor}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -49,8 +49,8 @@ class StockDetailScreen extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _buildButton("Buy", ColorPallete.dark_secondaryColor, () => _showDialog(context, "Buy")),
-        _buildButton("Sell", ColorPallete.dark_sellColor, () => _showDialog(context, "Sell")),
+        _buildButton("Buy", ColorsPallete.darkmode_secondaryColor, () => _showDialog(context, "Buy")),
+        _buildButton("Sell", ColorsPallete.darkmode_sellColor, () => _showDialog(context, "Sell")),
       ],
     );
   }
@@ -85,8 +85,8 @@ class StockDetailScreen extends StatelessWidget {
             ],
           ),
           actions: <Widget>[
-            _buildDialogButton("Cancel", ColorPallete.dark_textcolor, () => Navigator.of(context).pop()),
-            _buildDialogButton("Confirm", ColorPallete.dark_textcolor, () => Navigator.of(context).pop()),
+            _buildDialogButton("Cancel", ColorsPallete.darkmodetextcolor, () => Navigator.of(context).pop()),
+            _buildDialogButton("Confirm", ColorsPallete.darkmodetextcolor, () => Navigator.of(context).pop()),
           ],
         );
       },

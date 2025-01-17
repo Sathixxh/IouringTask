@@ -78,7 +78,7 @@ class _WatchlistScreenState extends State<WatchlistScreen>
                           Icon(
                             size: 25,
                             Icons.list_sharp,
-                            color: ColorPallete.dark_secondaryColor,
+                            color: ColorsPallete.darkmode_secondaryColor,
                           ),
                           SizedBox(
                             width: 10,
@@ -114,7 +114,7 @@ class _WatchlistScreenState extends State<WatchlistScreen>
                             Icon(
                               size: 18,
                               Icons.apps_rounded,
-                              color: ColorPallete.dark_secondaryColor,
+                              color: ColorsPallete.darkmode_secondaryColor,
                             ),
                             SizedBox(
                               width: 10,
@@ -122,7 +122,7 @@ class _WatchlistScreenState extends State<WatchlistScreen>
                             Icon(
                               size: 18,
                               Icons.settings_input_component_outlined,
-                              color: ColorPallete.dark_secondaryColor,
+                              color: ColorsPallete.darkmode_secondaryColor,
                             ),
                             SizedBox(
                               width: 15,
@@ -210,8 +210,8 @@ class _WatchlistScreenState extends State<WatchlistScreen>
                                               children: [
                                                 Icon(
                                                   Icons.arrow_drop_up_sharp,
-                                                  color: ColorPallete
-                                                      .dark_secondaryColor,
+                                                  color: ColorsPallete
+                                                      .darkmode_secondaryColor,
                                                 ),
                                                 Text(
                                                   watchList[index]
@@ -221,8 +221,8 @@ class _WatchlistScreenState extends State<WatchlistScreen>
                                                       .textTheme
                                                       .bodySmall!
                                                       .copyWith(
-                                                        color: ColorPallete
-                                                            .dark_secondaryColor,
+                                                        color: ColorsPallete
+                                                            .darkmode_secondaryColor,
                                                       ),
                                                 ),
                                               ],
@@ -232,7 +232,7 @@ class _WatchlistScreenState extends State<WatchlistScreen>
                                             "+${watchList[index].change} (${watchList[index].percentageChange}%)",
                                             style: const TextStyle(
                                               color:
-                                                  ColorPallete.light_textcolor,
+                                                  ColorsPallete.light_textcolor,
                                             ),
                                           ),
                                         ],
@@ -278,7 +278,7 @@ class _WatchlistScreenState extends State<WatchlistScreen>
                           Icon(
                             size: 18,
                             Icons.apps_rounded,
-                            color: ColorPallete.dark_secondaryColor,
+                            color: ColorsPallete.darkmode_secondaryColor,
                           ),
                           SizedBox(
                             width: 10,
@@ -286,7 +286,7 @@ class _WatchlistScreenState extends State<WatchlistScreen>
                           Icon(
                             size: 18,
                             Icons.settings_input_component_outlined,
-                            color: ColorPallete.dark_secondaryColor,
+                            color: ColorsPallete.darkmode_secondaryColor,
                           ),
                           SizedBox(
                             width: 15,
@@ -329,7 +329,7 @@ class _WatchlistScreenState extends State<WatchlistScreen>
                           Icon(
                             size: 18,
                             Icons.apps_rounded,
-                            color: ColorPallete.dark_secondaryColor,
+                            color: ColorsPallete.darkmode_secondaryColor,
                           ),
                           SizedBox(
                             width: 10,
@@ -337,7 +337,7 @@ class _WatchlistScreenState extends State<WatchlistScreen>
                           Icon(
                             size: 18,
                             Icons.settings_input_component_outlined,
-                            color: ColorPallete.dark_secondaryColor,
+                            color: ColorsPallete.darkmode_secondaryColor,
                           ),
                           SizedBox(
                             width: 15,

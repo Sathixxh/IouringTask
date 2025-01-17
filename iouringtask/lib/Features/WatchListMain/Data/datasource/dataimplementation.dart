@@ -5,7 +5,7 @@ import 'package:iouringtask/Features/WatchListMain/Data/model/watchlistmodel.dar
 
 class WatchListDataSourceimpl implements WatchListDatasource {
   @override
-  Future<List<WatchListModel>> fetchdata() async {
+  Future<List<WatchListModel>> fetchWatclListData() async {
     List<WatchListModel> watchListDetails = [
       WatchListModel(
           stockName: 'GOLD 26JUL 59500 CE',

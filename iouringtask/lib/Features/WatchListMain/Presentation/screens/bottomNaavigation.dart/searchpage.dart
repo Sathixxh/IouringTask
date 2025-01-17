@@ -22,7 +22,7 @@ class SearchScreen extends StatelessWidget {
                   Icon(
                     size: 18,
                     Icons.apps_rounded,
-                    color: ColorPallete.dark_secondaryColor,
+                    color: ColorsPallete.darkmode_secondaryColor,
                   ),
                   SizedBox(
                     width: 10,
@@ -30,7 +30,7 @@ class SearchScreen extends StatelessWidget {
                   Icon(
                     size: 18,
                     Icons.settings_input_composite_rounded,
-                    color: ColorPallete.dark_secondaryColor,
+                    color: ColorsPallete.darkmode_secondaryColor,
                   ),
                   SizedBox(
                     width: 15,

@@ -8,5 +8,5 @@ class WatchListRepImpl implements WatchListrepos {
   WatchListRepImpl({required this.watchListDatasource});
   @override
   Future<List<WatchListModel>> watchListdataRepos() async =>
-      await watchListDatasource.fetchdata();
+      await watchListDatasource.fetchWatclListData();
 }
